@@ -5,6 +5,15 @@ import NProgress from 'nprogress';
 class Spinner extends React.Component {
   componentDidMount() {
     const { store } = this.context;
+
+    // NOTE: react-redux v6.0.0 introduced a breaking change that breaks the use of React context's legacy API:
+    // See: https://github.com/reduxjs/react-redux/releases/tag/v6.0.0:
+    // Passing store as a prop to a connected component is no longer supported.
+    if (!store) {
+      this.disposeStoreSubscription = () => {};
+      return;
+    }
+
     const { config } = this.props;
     this.previousPendingTasks = store.getState().pendingTasks;
     NProgress.configure(config);
