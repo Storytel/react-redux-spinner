@@ -4,7 +4,7 @@ const { DefinePlugin } = require('webpack');
 
 module.exports = (env, argv) => {
   const { mode = 'production' } = argv;
-  const devMode = mode === "development";
+  const devMode = mode === 'development';
 
   return {
     name: 'react-redux-spinner-example',
@@ -33,5 +33,5 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({ inject: 'head', title: 'React Redux Spinner' })
     ],
     devtool: devMode ? 'cheap-module-source-map' : ''
-  }
+  };
 };

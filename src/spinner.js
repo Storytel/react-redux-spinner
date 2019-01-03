@@ -6,15 +6,15 @@ import NProgress from 'nprogress';
 class Spinner extends React.Component {
   componentDidUpdate(prevProps) {
     const diff = this.props.pendingTasks - prevProps.pendingTasks;
-      if (diff > 0) {
-        NProgress.start();
-      }
-      if (diff < 0) {
-        NProgress.inc();
-      }
-      if (this.props.pendingTasks === 0) {
-        NProgress.done();
-      }
+    if (diff > 0) {
+      NProgress.start();
+    }
+    if (diff < 0) {
+      NProgress.inc();
+    }
+    if (this.props.pendingTasks === 0) {
+      NProgress.done();
+    }
   }
 
   componentDidMount() {
