@@ -7,7 +7,7 @@
     "example:run": "NODE_ENV=development webpack-dev-server --config example/webpack.config.babel.js",
     "example:build": "NODE_ENV=production webpack --config example/webpack.config.babel.js",
     "lint": "eslint src example test",
-    "mocha": "mocha --compilers js:babel-core/register",
+    "mocha": "mocha --require @babel/register",
     "test": "yarn mocha && yarn lint",
     "build": "NODE_ENV=production webpack --config src/webpack.config.babel.js",
     "prepublishOnly": "yarn build"
@@ -54,7 +54,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.12.0",
-    "mocha": "^4.0.1",
+    "mocha": "~5.2.0",
     "nprogress": "^0.2.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
