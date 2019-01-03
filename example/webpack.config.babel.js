@@ -1,8 +1,7 @@
-import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { DefinePlugin } from 'webpack';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
-
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
   name: 'react-redux-spinner-example',

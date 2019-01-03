@@ -1,6 +1,6 @@
-import path from 'path';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = [
   {
