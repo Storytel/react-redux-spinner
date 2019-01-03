@@ -1,9 +1,11 @@
 const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const config = [
-  {
+module.exports = (env, argv) => {
+  const { mode = 'production' } = argv;
+
+  return {
     name: 'react-redux-spinner',
     entry: [
       './src/nprogress.css',
@@ -30,23 +32,22 @@ const config = [
         },
         {
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: {
-              loader: 'css-loader',
-              options: {
-                minimize: true
-              }
-            }
-          })
+          use: [
+            MiniCssExtractPlugin.loader,
+            'css-loader'
+          ]
         }
       ]
     },
     plugins: [
-      new UglifyJSPlugin(),
-      new ExtractTextPlugin('react-redux-spinner.css')
-    ]
+      new MiniCssExtractPlugin({
+        filename: 'react-redux-spinner.css'
+      })
+    ],
+    optimization: {
+      minimizer: [
+        new OptimizeCssAssetsPlugin(),
+      ]
+    }
   }
-];
-
-module.exports = config;
+};
