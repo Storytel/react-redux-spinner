@@ -41,6 +41,7 @@
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
     "react-dom": "^0.14 || ^15.0.0 || ^16.0.0",
+    "react-redux": "*",
     "redux": "^3.0.0 || ^4.0.0"
   },
   "devDependencies": {
@@ -63,6 +64,7 @@
     "optimize-css-assets-webpack-plugin": "~5.0.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-redux": "^6.0.0",
     "redux": "^4.0.0",
     "style-loader": "~0.23.1",
     "webpack": "~4.28.3",
