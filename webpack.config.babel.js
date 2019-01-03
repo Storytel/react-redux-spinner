@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
       'prop-types': 'prop-types'
     },
     output: {
-      path: path.join(__dirname, '..', 'dist'),
+      path: path.join(__dirname, 'dist'),
       filename: 'react-redux-spinner.js',
       library: 'react-redux-spinner',
       libraryTarget: 'umd',

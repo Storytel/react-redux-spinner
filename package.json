@@ -2,14 +2,18 @@
   "name": "react-redux-spinner",
   "version": "1.1.4",
   "description": "A spinner and loading bar for any long running tasks. For react with redux",
-  "main": "dist/react-redux-spinner.js",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
   "scripts": {
     "example:run": "webpack-dev-server --config example/webpack.config.babel.js --mode=development",
     "example:build": "webpack-cli --config example/webpack.config.babel.js --mode=production",
     "lint": "eslint src example test",
     "mocha": "mocha --require @babel/register",
     "test": "yarn mocha && yarn lint",
-    "build": "webpack-cli --config src/webpack.config.babel.js --mode=production",
+    "build": "yarn build:esm && yarn build:commonjs && yarn build:umd",
+    "build:esm": "BABEL_ENV=esm babel src --out-dir esm",
+    "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:umd": "webpack-cli --config webpack.config.babel.js --mode=production",
     "prepublishOnly": "yarn build"
   },
   "repository": {

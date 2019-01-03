@@ -2,3 +2,5 @@
 /dist
 /dist-example
 /.idea/
+/esm
+/lib
