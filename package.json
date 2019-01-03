@@ -47,7 +47,7 @@
     "babel-eslint": "~10.0.1",
     "babel-loader": "~8.0.4",
     "css-loader": "^0.28.7",
-    "eslint": "^4.11.0",
+    "eslint": "~5.11.1",
     "eslint-config-storytel": "^4.0.0",
     "eslint-plugin-react": "^7.5.1",
     "expect.js": "^0.3.1",
