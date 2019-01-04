@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 
 import {
   // The react component which renders the spinner
@@ -102,5 +103,5 @@ App.childContextTypes = {
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.createElement('div');
   document.body.appendChild(root);
-  ReactDOM.render(<App store={store} />, root);
+  ReactDOM.render(<Provider store={store}><App store={store}/></Provider>, root);
 });
