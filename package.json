@@ -1,6 +1,6 @@
 {
   "name": "react-redux-spinner",
-  "version": "1.1.4",
+  "version": "2.0.0-beta.0",
   "description": "A spinner and loading bar for any long running tasks. For react with redux",
   "main": "lib/index.js",
   "module": "esm/index.js",
