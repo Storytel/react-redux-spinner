@@ -625,7 +625,7 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
-"@babel/register@~7.0.0":
+"@babel/register@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.0.0.tgz#fa634bae1bfa429f60615b754fc1f1d745edd827"
   integrity sha512-f/+CRmaCe7rVEvcvPvxeA8j5aJhHC3aJie7YuqcMDhUOuyWLA7J/aNrTaHIzoWPEhpHA54mec4Mm8fv8KBlv3g==
@@ -2292,9 +2292,10 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-storytel@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-storytel/-/eslint-config-storytel-4.0.0.tgz#fe5c6f29dffaa1533525211a3d853ca439adcb80"
+eslint-config-storytel@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-storytel/-/eslint-config-storytel-5.0.0.tgz#fedf9cf86b6e24038e6a0e475ead3d11363a72d5"
+  integrity sha512-vgKYMoUFQmH5ckUR1CTTG8XVGvGZTcyhwMa2qJllFsdJb2XUZpdLnQXtgPs3nroDHVmR1/g1ieChXg+RfhvA5w==
 
 eslint-plugin-react@^7.5.1:
   version "7.12.2"
