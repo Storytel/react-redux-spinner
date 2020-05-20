@@ -1,31 +1,31 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import NProgress from 'nprogress';
 
-class Spinner extends React.Component {
-  componentDidUpdate(prevProps) {
-    const diff = this.props.pendingTasks - prevProps.pendingTasks;
-    if (diff > 0) {
+const pendingTasksSelector = (state) => state.pendingTasks;
+
+const Spinner = ({ config }) => {
+  const pendingTasks = useSelector(pendingTasksSelector);
+
+  useEffect(() => {
+    if (pendingTasks > 0) {
       NProgress.start();
     }
-    if (diff < 0) {
+    if (pendingTasks < 0) {
       NProgress.inc();
     }
-    if (this.props.pendingTasks === 0) {
+    if (pendingTasks === 0) {
       NProgress.done();
     }
-  }
+  }, [pendingTasks]);
 
-  componentDidMount() {
-    const { config } = this.props;
+  useEffect(() => {
     NProgress.configure(config);
-  }
+  }, []);
 
-  render() {
-    return null;
-  }
-}
+  return null;
+};
 
 Spinner.propTypes = {
   config: PropTypes.object,
@@ -36,8 +36,5 @@ Spinner.defaultProps = {
   config: {}
 };
 
-const mapStateToProps = (state) => ({
-  pendingTasks: state.pendingTasks
-});
+export default Spinner;
 
-export default connect(mapStateToProps)(Spinner);
