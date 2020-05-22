@@ -1,6 +1,6 @@
 {
   "name": "react-redux-spinner",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A spinner and loading bar for any long running tasks. For react with redux",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -65,7 +65,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-redux": "^6.0.0",
+    "react-redux": "^7.1.1",
     "redux": "^4.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.3",
