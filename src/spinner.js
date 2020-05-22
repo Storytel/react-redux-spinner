@@ -2,17 +2,18 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import NProgress from 'nprogress';
-
-const pendingTasksSelector = (state) => state.pendingTasks;
+import { pendingTasksSelector, usePreviousPendingTasks } from './hooks';
 
 const Spinner = ({ config }) => {
   const pendingTasks = useSelector(pendingTasksSelector);
+  const prevPendingTasks = usePreviousPendingTasks(pendingTasks);
+  const diff = pendingTasks - prevPendingTasks;
 
   useEffect(() => {
-    if (pendingTasks > 0) {
+    if (diff > 0) {
       NProgress.start();
     }
-    if (pendingTasks < 0) {
+    if (diff < 0) {
       NProgress.inc();
     }
     if (pendingTasks === 0) {
