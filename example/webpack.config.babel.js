@@ -20,11 +20,11 @@ module.exports = (env, argv) => {
         {
           test: /\.js$/,
           include: [ __dirname, path.join(__dirname, '..', 'src/') ],
-          loader: 'babel-loader'
+          use: ['babel-loader']
         },
         {
           test: /\.css$/,
-          loader: 'style-loader!css-loader'
+          use: ['style-loader', 'css-loader']
         }
       ]
     },
